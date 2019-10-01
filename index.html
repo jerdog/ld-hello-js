@@ -18,17 +18,17 @@
 
       var div = document.createElement("div");
       document.body.appendChild(div);
-      
+
       div.appendChild(document.createTextNode('Initializing...'));
 
-      var ldclient = LDClient.initialize('YOUR_CLIENT_SIDE_ID_HERE', user);
-      
+      var ldclient = LDClient.initialize('5d93d6f59d3ec6088fc45ee1', user);
+
       function render() {
-        var shouldShow = ldclient.variation("YOUR_FLAG_KEY_HERE", false);
+        var shouldShow = ldclient.variation('sharks-with-added-lasers', false);
         var label = (shouldShow ? "Showing" : "Not showing") + " your feature to " + user.key;
         div.replaceChild(document.createTextNode(label), div.firstChild);
       }
-      
+
       ldclient.on('ready', render);
       ldclient.on('change', render);
     </script>
